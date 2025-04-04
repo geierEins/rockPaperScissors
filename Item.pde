@@ -48,15 +48,16 @@ class Item {
 
   void applyColorByType() {
     noStroke();
+    int alpha = 150;
     switch(type) {
     case ROCK :
-      fill(colorRock);
+      fill(colorRock, alpha);
       break;
     case PAPER :
-      fill(colorPaper);
+      fill(colorPaper, alpha);
       break;
     case SCISSORS :
-      fill(colorScissors);
+      fill(colorScissors, alpha);
       break;
     }
   }

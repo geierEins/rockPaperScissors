@@ -10,8 +10,10 @@ class DiagramManager {
 
   float currentXinput = 0f;
   boolean isMotion = true;
+  int stretchFactor = 1000;
 
   void displayDiagrams() {
+    if (!rockCountDots.isEmpty() && rockCountDots.get(rockCountDots.size()-1).x >= boxBoundaries.get("xR")-20) stretchBy(1.6); // stretch diagrams if right edge is reached
     displayItemCountDiagram(RpsType.ROCK);
     displayItemCountDiagram(RpsType.PAPER);
     displayItemCountDiagram(RpsType.SCISSORS);
@@ -19,8 +21,7 @@ class DiagramManager {
 
   void displayItemCountDiagram(RpsType type) {
     PVector currentPoint = new PVector(0, 0);
-    int stretchFactor = 1000;
-    
+
     currentPoint.x = map(currentXinput, 0, stretchFactor, minX, maxX);
     currentPoint.y = map(counts.get(type), 0, itemsPerGroup*3, minY, maxY);
 
@@ -54,16 +55,27 @@ class DiagramManager {
     if (isMotion) currentXinput+=1;
   }
 
-  void compressDiagramsByFactor(int factor) {
-    for (int i=1; i<rockCountDots.size(); i++) {
-      rockCountDots.get(i).x /= factor;
-      paperCountDots.get(i).x /= factor;
-      scissorsCountDots.get(i).x /= factor;
+  void stretchBy(float f) {
+    compressDiagramsByFactor(f);
+    multiplyStretchFactorBy(f);
+    println("stretched diagrams by " + f + " (stretchFactor now: " + this.stretchFactor + ")");
+  }
+
+  void compressDiagramsByFactor(float factor) {
+    float xL = boxBoundaries.get("xL");
+    for (int i=0; i<rockCountDots.size(); i++) {
+      rockCountDots.get(i).x = ((rockCountDots.get(i).x-xL)/factor)+xL;
+      paperCountDots.get(i).x = ((paperCountDots.get(i).x-xL)/factor)+xL;
+      scissorsCountDots.get(i).x = ((scissorsCountDots.get(i).x-xL)/factor)+xL;
     }
   }
 
-  void stopMotion() {
-    isMotion = false;
+  void multiplyStretchFactorBy(float f) {
+    this.stretchFactor *= f;
+  }
+
+  void setMotion(boolean b) {
+    isMotion = b;
   }
 
   void reset() {
@@ -71,5 +83,6 @@ class DiagramManager {
     paperCountDots.clear();
     scissorsCountDots.clear();
     currentXinput = 0;
+    setMotion(true);
   }
 }

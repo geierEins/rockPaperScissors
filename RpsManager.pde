@@ -32,9 +32,7 @@ class RpsManager {
     return true;
   }
 
-  void run() {
-    drawBoxBackground();
-    diagramManager.displayDiagrams();
+  void runItems() {
     IntStream.range(0, items.size()).forEach(i -> {
       Item item = items.get(i);
       item.move();
@@ -46,17 +44,10 @@ class RpsManager {
       item.display();
     }
     );
-    drawBoxEdges();
   }
 
   void stop() {
-    items.stream().forEach(i -> i.vel.setMag(0));
-    drawBoxBackground();
-     IntStream.range(0, items.size()).forEach(i -> {
-       Item item = items.get(i);
-       item.display();
-     });
-    drawBoxEdges();
+    items.stream().forEach(i -> i.vel.setMag(0)); // vel vektor auf 0
   }
 
   void drawBoxBackground() {
@@ -76,8 +67,8 @@ class RpsManager {
     float y = boxBoundaries.get("yO");
     float w = boxBoundaries.get("xR") - x;
     float h = boxBoundaries.get("yU") - y;
-    strokeWeight(5);
-    stroke(0);
+    strokeWeight(10);
+    stroke(50);
     noFill();
     rect(x, y, w, h, 10);
   }

@@ -7,11 +7,25 @@ class CountManager {
 
   void drawItemCounts() {
     int shapeSize = 80;
+    int minCircleSize = 50;
+    int maxCirclesSize = 300;
+    float rockCircleSize = map(counts.get(RpsType.ROCK), 0, itemsPerGroup*3, minCircleSize, maxCirclesSize);
+    float paperCircleSize = map(counts.get(RpsType.PAPER), 0, itemsPerGroup*3, minCircleSize, maxCirclesSize);
+    float scissorsCircleSize = map(counts.get(RpsType.SCISSORS), 0, itemsPerGroup*3, minCircleSize, maxCirclesSize);
     float xRock = width/4;
     float xPaper = width/2;
     float xScissors = 3*(width/4);
-    float yShape = height*0.9;
-    float yText = height*0.97;
+    float yShape = height*0.89;
+    float yText = height*0.96;
+    
+    // Circles
+    noStroke();
+    fill(colorRock);
+    ellipse(xRock, yShape, circleSize, circleSize);
+    fill(colorPaper);
+    ellipse(xPaper, yShape, circleSize, circleSize);
+    fill(colorScissors);
+    ellipse(xScissors, yShape, circleSize, circleSize);
 
     // Shapes
     shapeMode(CENTER);

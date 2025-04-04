@@ -8,7 +8,7 @@ class ResultPanel {
 
   void drawBox() {
     RpsType winnerType = countManager.getWinningType();
-    int alpha = 100;
+    int alpha = 200;
 
     switch(winnerType) {
     case ROCK :
@@ -23,8 +23,8 @@ class ResultPanel {
     }
 
     rectMode(CENTER);
-    stroke(20, 50);
-    strokeWeight(20);
+    stroke(50);
+    strokeWeight(7);
     rect(width/2, height/2, width/3, height/3, 30);
   }
 
