@@ -12,6 +12,10 @@ class DiagramManager {
   boolean isMotion = true;
   int stretchFactor = 1000;
 
+  DiagramManager() {
+    println("stretchFactor now: " + stretchFactor);
+  }
+
   void displayDiagrams() {
     if (!rockCountDots.isEmpty() && rockCountDots.get(rockCountDots.size()-1).x >= boxBoundaries.get("xR")-20) stretchBy(1.6); // stretch diagrams if right edge is reached
     displayItemCountDiagram(RpsType.ROCK);

@@ -11,8 +11,8 @@ DiagramManager diagramManager;
 List<Item> items = new ArrayList<>();
 
 // 50.10.10, 30.15.10, 
-int itemsPerGroup = 30;
-int itemSize = 15;
+int itemsPerGroup = 50;
+int itemSize = 10;
 int velLimit = 10;
 
 Map<String, Float> boxBoundaries = new HashMap<>();
@@ -22,10 +22,9 @@ Map<RpsType, Integer> counts = new HashMap<>(Map.of(RpsType.ROCK, itemsPerGroup,
 color colorRock = color(178, 200, 250);
 color colorPaper = color(205, 190, 112);
 color colorScissors = color(230, 170, 170);
-//color colorScissors = color(255, 170, 170);
 
 void setup() {
-  size(1800, 900);
+  size(1700, 900);
   frameRate(60);
   printPreset();
   initBoxBoundaries();
@@ -64,7 +63,7 @@ void loadShapes() {
 void initBoxBoundaries() {
   float margin = 15f;
   boxBoundaries = new HashMap<>(Map.of(
-    "xL", margin, "xR", (float) width-margin, "yO", margin, "yU", height*0.83
+    "xL", margin, "xR", (float) width-margin, "yO", margin, "yU", height*0.81
     ));
 }
 

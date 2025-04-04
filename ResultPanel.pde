@@ -30,7 +30,7 @@ class ResultPanel {
 
   void drawText() {
     textAlign(CENTER, CENTER);
-    textSize(60);
+    textSize(45);
     fill(10);
     text("hat gewonnen!", width/2, height*0.55);
 
@@ -43,7 +43,7 @@ class ResultPanel {
     RpsType winnerType = countManager.getWinningType();
     float yShape = height*0.45;
     float xShape = width/2;
-    int shapeSize = 150;
+    int shapeSize = height/6;
 
     switch(winnerType) {
     case ROCK :

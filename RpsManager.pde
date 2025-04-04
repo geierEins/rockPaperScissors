@@ -67,7 +67,7 @@ class RpsManager {
     float y = boxBoundaries.get("yO");
     float w = boxBoundaries.get("xR") - x;
     float h = boxBoundaries.get("yU") - y;
-    strokeWeight(10);
+    strokeWeight(8);
     stroke(50);
     noFill();
     rect(x, y, w, h, 10);
