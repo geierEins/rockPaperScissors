@@ -10,9 +10,11 @@ class DiagramManager {
 
   float currentXinput = 0f;
   boolean isMotion = true;
-  int stretchFactor = 1000;
+  long initialStretchFactor = 500L;
+  long stretchFactor;
 
   DiagramManager() {
+    this.stretchFactor = initialStretchFactor;
     println("stretchFactor now: " + stretchFactor);
   }
 
@@ -87,6 +89,7 @@ class DiagramManager {
     paperCountDots.clear();
     scissorsCountDots.clear();
     currentXinput = 0;
+    stretchFactor = initialStretchFactor;
     setMotion(true);
   }
 }

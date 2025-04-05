@@ -1,9 +1,12 @@
 class ResultPanel {
+  boolean doShow = true;
 
   void showResults() {
-    drawBox();
-    drawText();
-    drawShape();
+    if (doShow) {
+      drawBox();
+      drawText();
+      drawShape();
+    }
   }
 
   void drawBox() {
@@ -56,5 +59,13 @@ class ResultPanel {
       shape(shapes.get(RpsType.SCISSORS), xShape, yShape, shapeSize, shapeSize);
       break;
     }
+  }
+  
+  void reset(){
+    doShow=true;
+  }
+
+  void switchShowOnOff() {
+    doShow = !doShow;
   }
 }
