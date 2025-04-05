@@ -51,7 +51,7 @@ class Slider {
 
     if (isMouseOver() && mouseX > leftX && mouseX < rightX) {
       this.circle_pos.x = x;
-      this.value = (int)map(this.circle_pos.x, leftX, rightX, minValue, maxValue);
+      this.value = (int)map(this.circle_pos.x, leftX, rightX, minValue, maxValue+1);
     }
   }
 

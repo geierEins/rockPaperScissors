@@ -15,8 +15,8 @@ class ModeSelectPanel {
   int itemsPerGroup;
 
   ModeSelectPanel() {
-    sliderItemsPerGroup = new Slider(centralX, slider1_Y, 1, 101);
-    sliderItemSize = new Slider(centralX, slider2_Y, 5, 81);
+    sliderItemsPerGroup = new Slider(centralX, slider1_Y, 1, 60);
+    sliderItemSize = new Slider(centralX, slider2_Y, 5, 80);
     goButton = new Button(centralX, goButton_Y, "GO!");
   }
 
