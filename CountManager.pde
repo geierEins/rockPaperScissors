@@ -16,7 +16,7 @@ class CountManager {
     float xPaper = width/2;
     float xScissors = 3*(width/4);
     float yShape = boxBoundaries.get("yU") + shapeSize*0.6;
-    float yText = yShape + shapeSize/1.5;
+    float yText = yShape + shapeSize/1.3;
     
     // Circles
     noStroke();

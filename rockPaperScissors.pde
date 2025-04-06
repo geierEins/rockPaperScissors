@@ -111,7 +111,7 @@ void keyPressed() {
 
 void mousePressed() {
   if (screen == 0 && modeSelectPanel.goButton.isMouseOver()) {
-    initGame(modeSelectPanel.sliderItemsPerGroup.value,modeSelectPanel.sliderItemSize.value,velLimit);
+    initGame(modeSelectPanel.sliderItemsPerGroup.value,modeSelectPanel.sliderItemSize.value,modeSelectPanel.sliderVelLimit.value);
     screen = 1;
   } 
   if (screen == 1 && countManager.doWeHaveAWinner()) reset();
@@ -121,5 +121,6 @@ void mouseDragged() {
   if (screen == 0) {
     modeSelectPanel.sliderItemSize.moveSlider(mouseX);
     modeSelectPanel.sliderItemsPerGroup.moveSlider(mouseX);
+    modeSelectPanel.sliderVelLimit.moveSlider(mouseX);
   }
 }

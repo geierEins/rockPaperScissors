@@ -15,7 +15,7 @@ class DiagramManager {
 
   DiagramManager() {
     this.stretchFactor = initialStretchFactor;
-    println("stretchFactor now: " + stretchFactor);
+    //println("stretchFactor now: " + stretchFactor);
   }
 
   void displayDiagrams() {
@@ -64,7 +64,7 @@ class DiagramManager {
   void stretchBy(float f) {
     compressDiagramsByFactor(f);
     multiplyStretchFactorBy(f);
-    println("stretched diagrams by " + f + " (stretchFactor now: " + this.stretchFactor + ")");
+    //println("stretched diagrams by " + f + " (stretchFactor now: " + this.stretchFactor + ")");
   }
 
   void compressDiagramsByFactor(float factor) {

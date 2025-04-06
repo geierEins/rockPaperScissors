@@ -35,7 +35,7 @@ class ResultPanel {
     textAlign(CENTER, CENTER);
     textSize(45);
     fill(10);
-    text("hat gewonnen!", width/2, height*0.55);
+    text("hat gewonnen!", width/2, height*0.56);
 
     textSize(25);
     fill(100);

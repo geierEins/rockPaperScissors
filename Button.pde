@@ -29,7 +29,7 @@ class Button {
     fill(strokeColor);
     textSize(buttonHeight*0.5);
     textAlign(CENTER, CENTER);
-    text(buttonText, pos.x, pos.y-10);
+    text(buttonText, pos.x, pos.y);
   }
 
   boolean isMouseOver() {

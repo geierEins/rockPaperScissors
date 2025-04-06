@@ -10,7 +10,7 @@ class Slider {
   int minValue, maxValue;
   color strokeColor = color(50);
   color sliderColorNormal = color(200);
-  color sliderColorOver = color(190, 190, 240);
+  color sliderColorOver = color(190);
 
   Slider(float x, float y, int minValue, int maxValue) {
     this.slider_pos = new PVector(x, y);
@@ -18,7 +18,14 @@ class Slider {
     this.minValue = minValue;
     this.maxValue = maxValue;
     this.value = (maxValue + minValue)/2;
+    
   }
+  
+  Slider(float x, float y, int minValue, int maxValue, color colorNormal){
+    this(x, y, minValue, maxValue);
+    this.sliderColorNormal = colorNormal;
+  }
+  
 
   void showSlider() {
     strokeWeight(5);
@@ -39,10 +46,7 @@ class Slider {
     fill(strokeColor);
     textSize(slider_diameter*0.6);
     textAlign(CENTER, CENTER);
-    text(value, circle_pos.x, circle_pos.y-10);
-
-    // Point (debug)
-    //point(pos.x, pos.y);
+    text(value, circle_pos.x, circle_pos.y);
   }
 
   void moveSlider(float x) {
